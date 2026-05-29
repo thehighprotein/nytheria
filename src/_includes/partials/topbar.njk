@@ -1,17 +1,16 @@
 {# Schmale, mitscrollende Kopfleiste #}
 <header class="topbar">
   <nav class="topnav" aria-label="Navigation">
-    {# Heimat: Grafschaft (Startseite) #}
+    {# Heimat: Grafschaft (Startseite) — Button-Optik #}
     {%- if grafschaftName and grafschaftUrl %}
-    <a class="topnav-home" href="{{ grafschaftUrl | url }}">{{ grafschaftName }}</a>
-    <span class="topnav-sep" aria-hidden="true">·</span>
+    <a class="iconbtn" href="{{ grafschaftUrl | url }}">{{ grafschaftName }}</a>
     {%- endif %}
 
-    {# Auswahl: Dropdown aller Fraktionen — auf jeder Seite identisch #}
+    {# Auswahl: Button, der per Klick ein Dropdown aller Fraktionen oeffnet #}
     {%- set fraktionen = collections.gruppierung | default([]) | sort(attribute="data.ordnung") -%}
     {%- if fraktionen | length %}
     <details class="auswahl">
-      <summary>Auswahl</summary>
+      <summary class="iconbtn">Auswahl</summary>
       <ul class="auswahl-menu">
         {%- for f in fraktionen %}
         <li>
@@ -25,7 +24,7 @@
     </details>
     {%- endif %}
 
-    {# Abwaerts-Uebergang zur naechsten Ebene #}
+    {# Abwaerts-Uebergang zur naechsten Ebene — Button-Optik #}
     {%- set naechste = null -%}
     {%- if tags and ("grafschaft" in tags) -%}
       {%- set naechste = collections.gruppierung | default([]) | filterBy("data.grafschaft", slug) | sort(attribute="data.ordnung") | first -%}
@@ -33,8 +32,9 @@
       {%- set naechste = collections.charakter | default([]) | filterBy("data.gruppierung", slug) | sort(attribute="data.ordnung") | first -%}
     {%- endif -%}
     {%- if naechste %}
-    <span class="topnav-sep topnav-sep--next" aria-hidden="true">→</span>
-    <a class="topnav-next" href="{{ naechste.url | url }}">{{ naechste.data.name }}</a>
+    <a class="iconbtn iconbtn--next" href="{{ naechste.url | url }}">
+      <span class="iconbtn-arrow" aria-hidden="true">→</span>{{ naechste.data.name }}
+    </a>
     {%- endif %}
   </nav>
 
