@@ -1,0 +1,54 @@
+{# ----------------------------- Modals ----------------------------- #}
+
+{# --- Galerie (nur wenn die Seite ein "galerie"-Feld hat) --- #}
+{%- if galerie %}
+<div class="modal" id="modal-galerie" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Galerie">
+    <button type="button" class="modal-x" data-close aria-label="Schliessen">✕</button>
+    <h2 class="modal-title">Augenblicke</h2>
+    <div class="gallery-grid">
+      {%- for bild in galerie %}
+      <figure class="gallery-item">
+        <img src="{{ bild.src | url }}" alt="{{ bild.text or '' }}" loading="lazy" />
+        {%- if bild.text %}<figcaption>{{ bild.text }}</figcaption>{%- endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</div>
+{%- endif %}
+
+{# --- Rechtliches / Hinweise --- #}
+<div class="modal" id="modal-hinweise" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Hinweise">
+    <button type="button" class="modal-x" data-close aria-label="Schliessen">✕</button>
+    <h2 class="modal-title">Hinweise</h2>
+    <h3>Rechtliches</h3>
+    <p>
+      Alle Inhalte dieser Seite — Texte, Gestaltung, Bilder, Audio und deren
+      Zusammenstellung — gehoeren dem Urheber dieser Seite. Eine Verwendung
+      ausserhalb des zugehoerigen Rollenspiel-Projekts bedarf der Zustimmung.
+    </p>
+    <h3>Hintergrundmusik</h3>
+    <p>
+      Verwende ausschliesslich Musik, an der du die Rechte besitzt
+      (Eigenkompositionen oder lizenzfreie Stuecke). Hinterlege Quelle und
+      Lizenz hier.
+    </p>
+  </div>
+</div>
+
+{# --- Musik-Einwilligung (erscheint einmalig beim ersten Besuch) --- #}
+<div class="modal" id="modal-musik" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box modal-box--narrow" role="dialog" aria-modal="true" aria-label="Hintergrundmusik">
+    <h2 class="modal-title">Hintergrundmusik</h2>
+    <p>Moechtest du die Musik fuer diese Seite abspielen?</p>
+    <div class="modal-choices">
+      <button type="button" class="btn btn--solid" id="music-yes">Ja</button>
+      <button type="button" class="btn" id="music-no">Nein</button>
+    </div>
+  </div>
+</div>

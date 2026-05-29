@@ -1,0 +1,31 @@
+{# Schmale, mitscrollende Kopfleiste #}
+<header class="topbar">
+  <nav class="crumbs" aria-label="Pfad">
+    <a href="{{ '/' | url }}">Auswahl</a>
+    {%- if grafschaftName and grafschaftUrl %}
+    <span class="crumb-sep">·</span>
+    <a href="{{ grafschaftUrl | url }}">{{ grafschaftName }}</a>
+    {%- endif %}
+    {%- if gruppierungName and gruppierungUrl %}
+    <span class="crumb-sep">·</span>
+    <a href="{{ gruppierungUrl | url }}">{{ gruppierungName }}</a>
+    {%- endif %}
+  </nav>
+
+  <div class="topbar-actions">
+    {%- if galerie %}
+    <button type="button" class="iconbtn" data-modal="modal-galerie">Galerie</button>
+    {%- endif %}
+    <button type="button" class="iconbtn" data-modal="modal-hinweise">Hinweise</button>
+    <button
+      type="button"
+      class="iconbtn musicbtn"
+      id="music-toggle"
+      aria-pressed="false"
+      title="Hintergrundmusik an/aus"
+    >
+      <span class="music-on">♪ Musik</span>
+      <span class="music-off">♪ Stumm</span>
+    </button>
+  </div>
+</header>

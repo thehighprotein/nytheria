@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+---
+<article class="page page--charakter">
+  <section
+    class="hero hero--portrait"
+    style="--hero-img: url('{{ (bild or '/assets/img/og-default.png') | url }}')"
+  >
+    <div class="hero-veil hero-veil--portrait"></div>
+    <div class="hero-inner reveal">
+      <p class="kicker">{{ gruppierungName }}</p>
+      <h1 class="hero-title">{{ name }}</h1>
+      {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
+      <div class="rule"><span>✦</span></div>
+    </div>
+  </section>
+
+  {# --- Kapitel-Navigation (Anker-Links wie #prolog) --- #}
+  {%- set kapitel = kapitel or [
+      { id: "prolog", titel: "Prolog" },
+      { id: "herkunft", titel: "Herkunft" },
+      { id: "wesen", titel: "Wesen" },
+      { id: "verbindungen", titel: "Verbindungen" }
+    ] -%}
+  <nav class="chapter-nav reveal" aria-label="Kapitel">
+    {%- for k in kapitel %}
+    <a href="#{{ k.id }}">{{ k.titel }}</a>
+    {%- endfor %}
+  </nav>
+
+  <div class="prose prose--drop reveal">{{ content | safe }}</div>
+
+  {%- if galerie %}
+  <section class="listing reveal">
+    <h2 class="section-title">Augenblicke</h2>
+    <button type="button" class="btn btn--solid" data-modal="modal-galerie">
+      Galerie oeffnen
+    </button>
+  </section>
+  {%- endif %}
+</article>

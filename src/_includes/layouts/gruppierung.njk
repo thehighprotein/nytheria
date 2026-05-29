@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+---
+<article class="page page--gruppierung">
+  <section
+    class="hero hero--wide"
+    style="--hero-img: url('{{ (bild or '/assets/img/og-default.png') | url }}')"
+  >
+    <div class="hero-veil"></div>
+    <div class="hero-inner reveal">
+      <p class="kicker">Gruppierung · {{ grafschaftName }}</p>
+      <h1 class="hero-title">{{ name }}</h1>
+      {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
+      <div class="rule"><span>✦</span></div>
+    </div>
+  </section>
+
+  <div class="prose reveal">{{ content | safe }}</div>
+
+  <section class="listing">
+    <h2 class="section-title">Charaktere</h2>
+    <div class="card-grid card-grid--portrait">
+      {%- set leute = collections.charakter | default([]) -%}
+      {%- for c in leute | sort(attribute="data.ordnung") -%}
+      {%- if c.data.gruppierung == slug %}
+      <a
+        class="card card--portrait reveal"
+        href="{{ c.url | url }}"
+        style="--accent: {{ c.data.accent or accent or site.accent }}"
+      >
+        <div
+          class="card-img card-img--tall"
+          style="background-image: url('{{ (c.data.bild or '/assets/img/og-default.png') | url }}')"
+        ></div>
+        <div class="card-body">
+          <h3 class="card-title">{{ c.data.name }}</h3>
+          {%- if c.data.untertitel %}
+          <p class="card-kicker">{{ c.data.untertitel }}</p>
+          {%- endif %}
+        </div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </section>
+</article>

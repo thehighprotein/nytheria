@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+  <body style="--accent: {{ accent or site.accent }}">
+    <div class="grain" aria-hidden="true"></div>
+
+    {% include "partials/topbar.njk" %}
+
+    <main>{{ content | safe }}</main>
+
+    <footer class="site-footer">
+      <p>{{ site.name }} · {{ site.tagline }}</p>
+      <p class="footer-fine">
+        Alle Inhalte gehoeren dem Urheber dieser Seite.
+      </p>
+    </footer>
+
+    {% include "partials/modals.njk" %}
+
+    {# Hintergrundmusik. Datei unter src/assets/audio/ ablegen. #}
+    <audio
+      id="bg-music"
+      loop
+      preload="none"
+      src="{{ (musik or '/assets/audio/theme.mp3') | url }}"
+    ></audio>
+
+    <script src="{{ '/assets/js/main.js' | url }}" defer></script>
+  </body>
+</html>

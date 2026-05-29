@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+name: Liber Argenteus
+beschreibung: Chroniken, Orden und Charaktere der Grafschaft Nytheria.
+bild: /assets/img/banner-nytheria.png
+---
+<article class="page page--landing">
+  <section class="hero hero--landing">
+    <div class="hero-veil"></div>
+    <div class="hero-inner reveal">
+      <p class="kicker">{{ site.name }}</p>
+      <h1 class="hero-title hero-title--xl">Waehle eine Geschichte</h1>
+      <p class="hero-sub">{{ site.tagline }}</p>
+      <div class="rule"><span>✦</span></div>
+    </div>
+  </section>
+
+  <section class="listing">
+    <div class="card-grid">
+      {%- set lande = collections.grafschaft | default([]) -%}
+      {%- for g in lande | sort(attribute="data.ordnung") %}
+      <a
+        class="card reveal"
+        href="{{ g.url | url }}"
+        style="--accent: {{ g.data.accent or site.accent }}"
+      >
+        <div
+          class="card-img"
+          style="background-image: url('{{ (g.data.bild or '/assets/img/og-default.png') | url }}')"
+        ></div>
+        <div class="card-body">
+          <h3 class="card-title">{{ g.data.name }}</h3>
+          {%- if g.data.untertitel %}
+          <p class="card-kicker">{{ g.data.untertitel }}</p>
+          {%- endif %}
+          {%- if g.data.beschreibung %}
+          <p class="card-text">{{ g.data.beschreibung }}</p>
+          {%- endif %}
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+</article>

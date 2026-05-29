@@ -1,0 +1,39 @@
+{# ------------------------------------------------------------------ #}
+{# <head> inkl. Open-Graph-Tags. Diese erzeugen die Vorschaukarte,     #}
+{# die Discord zeigt, sobald jemand einen Link der Seite postet.       #}
+{# ------------------------------------------------------------------ #}
+{%- set seitenName = name or site.name -%}
+{%- set seitenTitel = (name + " — " + site.name) if name else site.name -%}
+{%- set seitenBeschreibung = beschreibung or site.tagline -%}
+{%- set heroBild = bild or "/assets/img/og-default.png" -%}
+{%- set ogBildAbsolut = (site.pathPrefix + heroBild) | absoluteUrl(site.url) -%}
+{%- set seitenAkzent = accent or site.accent -%}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ seitenTitel }}</title>
+<meta name="description" content="{{ seitenBeschreibung }}" />
+<meta name="theme-color" content="{{ seitenAkzent }}" />
+
+{# --- Open Graph (Discord, Facebook, ...) --- #}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{{ seitenTitel }}" />
+<meta property="og:description" content="{{ seitenBeschreibung }}" />
+<meta property="og:image" content="{{ ogBildAbsolut }}" />
+<meta property="og:url" content="{{ (site.pathPrefix + page.url) | absoluteUrl(site.url) }}" />
+<meta property="og:locale" content="de_DE" />
+
+{# --- Twitter / X (Discord nutzt diese als Fallback) --- #}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ seitenTitel }}" />
+<meta name="twitter:description" content="{{ seitenBeschreibung }}" />
+<meta name="twitter:image" content="{{ ogBildAbsolut }}" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
