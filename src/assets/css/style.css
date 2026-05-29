@@ -180,7 +180,7 @@ img { display: block; max-width: 100%; }
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  padding: clamp(4rem, 12vh, 8rem) 1.5rem;
+  padding: clamp(4rem, 12vh, 8rem) 1.5rem clamp(1.75rem, 4vh, 2.75rem);
   min-height: 62vh;
   background-image: var(--hero-img);
   background-size: cover;
