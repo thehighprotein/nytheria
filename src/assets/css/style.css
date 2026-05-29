@@ -143,9 +143,6 @@ img { display: block; max-width: 100%; }
   box-shadow: inset 2px 0 0 var(--accent);
 }
 
-/* Pfeil im Uebergangs-Button */
-.iconbtn--next .iconbtn-arrow { color: var(--accent); }
-
 .topbar-actions { display: flex; gap: 0.5rem; }
 
 .iconbtn {
@@ -180,7 +177,7 @@ img { display: block; max-width: 100%; }
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   padding: clamp(4rem, 12vh, 8rem) 1.5rem;

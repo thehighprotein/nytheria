@@ -18,7 +18,7 @@ layout: layouts/base.njk
   <div class="prose reveal">{{ content | safe }}</div>
 
   <section class="listing">
-    <h2 class="section-title">Gruppierungen</h2>
+    <h2 class="section-title">Orte &amp; Gruppierungen</h2>
     <div class="card-grid">
       {%- set gruppen = collections.gruppierung | default([]) -%}
       {%- for g in gruppen | sort(attribute="data.ordnung") -%}

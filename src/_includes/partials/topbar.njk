@@ -32,9 +32,7 @@
       {%- set naechste = collections.charakter | default([]) | filterBy("data.gruppierung", slug) | sort(attribute="data.ordnung") | first -%}
     {%- endif -%}
     {%- if naechste %}
-    <a class="iconbtn iconbtn--next" href="{{ naechste.url | url }}">
-      <span class="iconbtn-arrow" aria-hidden="true">→</span>{{ naechste.data.name }}
-    </a>
+    <a class="iconbtn" href="{{ naechste.url | url }}">{{ naechste.data.name }}</a>
     {%- endif %}
   </nav>
 
