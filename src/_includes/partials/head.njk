@@ -6,7 +6,7 @@
 {%- set seitenTitel = (name + " — " + site.name) if name else site.name -%}
 {%- set seitenBeschreibung = beschreibung or site.tagline -%}
 {%- set heroBild = bild or "/assets/img/og-default.png" -%}
-{%- set ogBildAbsolut = (site.pathPrefix + heroBild) | absoluteUrl(site.url) -%}
+{%- set ogBildAbsolut = (site.pathPrefix + heroBild + (heroBild | v)) | absoluteUrl(site.url) -%}
 {%- set seitenAkzent = accent or site.accent -%}
 
 <meta charset="utf-8" />

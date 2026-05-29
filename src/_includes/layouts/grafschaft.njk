@@ -2,9 +2,10 @@
 layout: layouts/base.njk
 ---
 <article class="page page--grafschaft">
+  {%- set heroBild = bild or '/assets/img/og-default.png' -%}
   <section
     class="hero hero--wide"
-    style="--hero-img: url('{{ (bild or '/assets/img/og-default.png') | url }}')"
+    style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"
   >
     <div class="hero-veil"></div>
     <div class="hero-inner reveal">
@@ -28,9 +29,10 @@ layout: layouts/base.njk
         href="{{ g.url | url }}"
         style="--accent: {{ g.data.accent or site.accent }}"
       >
+        {%- set kbild = g.data.bild or '/assets/img/og-default.png' -%}
         <div
           class="card-img"
-          style="background-image: url('{{ (g.data.bild or '/assets/img/og-default.png') | url }}')"
+          style="background-image: url('{{ kbild | url }}{{ kbild | v }}')"
         ></div>
         <div class="card-body">
           <h3 class="card-title">{{ g.data.name }}</h3>

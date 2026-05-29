@@ -2,9 +2,10 @@
 layout: layouts/base.njk
 ---
 <article class="page page--charakter">
+  {%- set heroBild = bild or '/assets/img/og-default.png' -%}
   <section
     class="hero hero--portrait"
-    style="--hero-img: url('{{ (bild or '/assets/img/og-default.png') | url }}')"
+    style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"
   >
     <div class="hero-veil hero-veil--portrait"></div>
     <div class="hero-inner reveal">

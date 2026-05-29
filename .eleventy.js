@@ -1,5 +1,7 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const fs = require("fs");
+const crypto = require("crypto");
 
 module.exports = function (eleventyConfig) {
   // --- Statische Assets unveraendert kopieren -----------------------------
@@ -45,6 +47,25 @@ module.exports = function (eleventyConfig) {
       const v = String(path).split(".").reduce((o, k) => (o == null ? o : o[k]), item);
       return v === value;
     });
+  });
+
+  // --- Filter: Cache-Busting-Query fuer ein Asset ------------------------
+  // Liefert "?v=<hash>" anhand des Dateiinhalts (Bilder, Audio, ...).
+  // Verwendung:  url('{{ bild | url }}{{ bild | v }}')
+  const versionCache = {};
+  eleventyConfig.addFilter("v", (assetPath) => {
+    if (!assetPath) return "";
+    const clean = String(assetPath).split("?")[0].split("#")[0].replace(/^\/+/, "");
+    if (clean in versionCache) return versionCache[clean];
+    let q = "";
+    try {
+      const buf = fs.readFileSync("src/" + clean);
+      q = "?v=" + crypto.createHash("md5").update(buf).digest("hex").slice(0, 8);
+    } catch (e) {
+      q = "";
+    }
+    versionCache[clean] = q;
+    return q;
   });
 
   return {

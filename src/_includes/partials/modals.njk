@@ -10,7 +10,7 @@
     <div class="gallery-grid">
       {%- for bild in galerie %}
       <figure class="gallery-item">
-        <img src="{{ bild.src | url }}" alt="{{ bild.text or '' }}" loading="lazy" />
+        <img src="{{ bild.src | url }}{{ bild.src | v }}" alt="{{ bild.text or '' }}" loading="lazy" />
         {%- if bild.text %}<figcaption>{{ bild.text }}</figcaption>{%- endif %}
       </figure>
       {%- endfor %}
