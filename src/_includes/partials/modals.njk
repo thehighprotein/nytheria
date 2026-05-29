@@ -40,7 +40,8 @@
   </div>
 </div>
 
-{# --- Musik-Einwilligung (erscheint einmalig beim ersten Besuch) --- #}
+{# --- Musik-Einwilligung (nur auf Seiten mit Musik, erscheint einmalig beim ersten Besuch) --- #}
+{%- if musik %}
 <div class="modal" id="modal-musik" aria-hidden="true">
   <div class="modal-backdrop" data-close></div>
   <div class="modal-box modal-box--narrow" role="dialog" aria-modal="true" aria-label="Hintergrundmusik">
@@ -52,3 +53,4 @@
     </div>
   </div>
 </div>
+{%- endif %}

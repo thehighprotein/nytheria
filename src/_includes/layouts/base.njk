@@ -19,13 +19,15 @@
 
     {% include "partials/modals.njk" %}
 
-    {# Hintergrundmusik. Datei unter src/assets/audio/ ablegen. #}
+    {# Hintergrundmusik — nur auf Seiten mit gesetztem "musik"-Feld. #}
+    {%- if musik %}
     <audio
       id="bg-music"
       loop
       preload="none"
-      src="{{ (musik or '/assets/audio/theme.mp3') | url }}"
+      src="{{ musik | url }}"
     ></audio>
+    {%- endif %}
 
     <script src="{{ '/assets/js/main.js' | url }}?v={{ assets.jsVersion }}" defer></script>
   </body>

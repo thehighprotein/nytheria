@@ -7,6 +7,7 @@ untertitel: Herrin von Caerdor Ithil
 beschreibung: Gräfin von Nytheria, Herrin des Sitzes Caerdor Ithil und Hüterin des Lichts über dem See.
 bild: /assets/img/leanna-kairis.png
 accent: "#c9a24a"
+musik: /assets/audio/leanna.mp3
 ---
 
 ## Prolog
