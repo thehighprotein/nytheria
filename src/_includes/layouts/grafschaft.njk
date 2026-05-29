@@ -4,11 +4,14 @@ layout: layouts/base.njk
 <article class="page page--grafschaft">
   {%- set heroBild = bild or '/assets/img/og-default.png' -%}
   <section
-    class="hero hero--wide"
-    style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"
+    class="hero hero--wide{% if wappen %} hero--wappen{% endif %}"
+    {%- if not wappen %} style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"{% endif %}
   >
-    <div class="hero-veil"></div>
+    {%- if not wappen %}<div class="hero-veil"></div>{% endif %}
     <div class="hero-inner reveal">
+      {%- if wappen %}
+      <img class="hero-wappen" src="{{ wappen | url }}{{ wappen | v }}" alt="Wappen {{ name }}" />
+      {%- endif %}
       <p class="kicker">Grafschaft</p>
       <h1 class="hero-title">{{ name }}</h1>
       {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}

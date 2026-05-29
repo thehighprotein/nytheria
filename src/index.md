@@ -7,6 +7,7 @@ name: Nytheria
 untertitel: Grafschaft im Schatten der Silberberge
 beschreibung: Eine Grenzgrafschaft zwischen Hochland und Aschewald, regiert vom Sitz Caerdor Ithil.
 bild: /assets/img/banner-nytheria.png
+wappen: /assets/img/wappen-nytheria.png
 accent: "#9aa7b8"
 ---
 
