@@ -27,6 +27,6 @@
       src="{{ (musik or '/assets/audio/theme.mp3') | url }}"
     ></audio>
 
-    <script src="{{ '/assets/js/main.js' | url }}" defer></script>
+    <script src="{{ '/assets/js/main.js' | url }}?v={{ assets.jsVersion }}" defer></script>
   </body>
 </html>
