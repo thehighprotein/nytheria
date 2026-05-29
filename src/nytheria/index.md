@@ -5,7 +5,7 @@ slug: nytheria
 ordnung: 1
 name: Nytheria
 untertitel: Grafschaft im Schatten der Silberberge
-beschreibung: Eine Grenzgrafschaft zwischen Hochland und Aschewald — Heimat alter Orden und neuer Klingen.
+beschreibung: Eine Grenzgrafschaft zwischen Hochland und Aschewald, regiert vom Sitz Caerdor Ithil.
 bild: /assets/img/banner-nytheria.png
 accent: "#9aa7b8"
 ---
@@ -14,9 +14,9 @@ Nytheria liegt dort, wo das Hochland in den Aschewald abfaellt — eine Grafscha
 der Grenzen, in der die Silberberge ihren langen Schatten ueber Doerfer, Burgen
 und vergessene Wege werfen.
 
-Zwei Maechte praegen das Land: der **Orden der Silberwacht**, der ueber die alten
-Eide wacht, und die **Rußklingen**, die nehmen, was die Wacht nicht schuetzt.
-Zwischen beiden entscheidet sich, wer Nytheria gehoert.
+Regiert wird das Land vom Sitz **Caerdor Ithil**, dem Hof der Gräfin **Leanna
+Kairis**. Von dort gehen die Fäden in die Fraktionen der Grafschaft — weitere
+folgen, sobald die Chroniken sie verzeichnen.
 
 > *Platzhaltertext. Ersetze diesen Abschnitt durch deine eigene Lore zur
 > Grafschaft — Geschichte, Geografie, Konflikte.*

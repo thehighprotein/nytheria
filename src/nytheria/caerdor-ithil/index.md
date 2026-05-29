@@ -4,18 +4,17 @@ tags: gruppierung
 slug: caerdor-ithil
 ordnung: 1
 name: Caerdor Ithil
-untertitel: Orden der Silberwacht
-beschreibung: Ein Paladinorden, der die alten Eide Nytherias bewahrt.
+untertitel: Sitz der Gräfin
+beschreibung: Die Residenz der Grafschaft Nytheria und Hof der Gräfin Leanna Kairis.
 bild: /assets/img/banner-caerdor-ithil.png
 ---
 
-Caerdor Ithil — in der alten Zunge *die Silberwacht* — ist der aelteste Orden
-Nytherias. Seine Ritter geloben, die Schwachen zu schuetzen und die drei heiligen
-Buecher zu bewahren.
+Caerdor Ithil — in der alten Zunge *das Silberlicht* — ist der Sitz der Grafschaft
+Nytheria. Auf einem Felssporn über dem See erhebt sich die Residenz, von der aus
+die Gräfin über das Land zwischen Hochland und Aschewald wacht.
 
-Wer dem Orden beitritt, legt das Silbergeluebde ab und traegt fortan das Wappen
-der Wacht. Unten findest du die Ritter und Knappen, die derzeit in den Chroniken
-verzeichnet sind.
+Hier laufen die Fäden der Macht zusammen: Hof, Rat und Gefolge der Gräfin. Unten
+findest du die Personen, die in den Chroniken des Hofes verzeichnet sind.
 
-> *Platzhaltertext. Beschreibe hier Geschichte, Hierarchie und Eide deines
-> Ordens.*
+> *Platzhaltertext. Beschreibe hier Geschichte, Architektur und Bewohner des
+> gräflichen Sitzes.*
