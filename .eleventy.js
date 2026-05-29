@@ -37,6 +37,16 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // --- Filter: Sammlung nach (verschachteltem) Attribut filtern -----------
+  // Beispiel: collections.gruppierung | filterBy("data.grafschaft", slug)
+  eleventyConfig.addFilter("filterBy", (arr, path, value) => {
+    if (!Array.isArray(arr)) return [];
+    return arr.filter((item) => {
+      const v = String(path).split(".").reduce((o, k) => (o == null ? o : o[k]), item);
+      return v === value;
+    });
+  });
+
   return {
     // WICHTIG fuer GitHub Pages Projektseiten:
     // Repo "charsheet_sh" -> Seite liegt unter /charsheet_sh/

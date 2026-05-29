@@ -1,14 +1,40 @@
 {# Schmale, mitscrollende Kopfleiste #}
 <header class="topbar">
-  <nav class="crumbs" aria-label="Pfad">
-    <a href="{{ '/' | url }}">Auswahl</a>
+  <nav class="topnav" aria-label="Navigation">
+    {# Heimat: Grafschaft (Startseite) #}
     {%- if grafschaftName and grafschaftUrl %}
-    <span class="crumb-sep">·</span>
-    <a href="{{ grafschaftUrl | url }}">{{ grafschaftName }}</a>
+    <a class="topnav-home" href="{{ grafschaftUrl | url }}">{{ grafschaftName }}</a>
+    <span class="topnav-sep" aria-hidden="true">·</span>
     {%- endif %}
-    {%- if gruppierungName and gruppierungUrl %}
-    <span class="crumb-sep">·</span>
-    <a href="{{ gruppierungUrl | url }}">{{ gruppierungName }}</a>
+
+    {# Auswahl: Dropdown aller Fraktionen — auf jeder Seite identisch #}
+    {%- set fraktionen = collections.gruppierung | default([]) | sort(attribute="data.ordnung") -%}
+    {%- if fraktionen | length %}
+    <details class="auswahl">
+      <summary>Auswahl</summary>
+      <ul class="auswahl-menu">
+        {%- for f in fraktionen %}
+        <li>
+          <a
+            href="{{ f.url | url }}"
+            {%- if gruppierung and f.data.gruppierung == gruppierung %} aria-current="page"{% endif %}
+          >{{ f.data.name }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </details>
+    {%- endif %}
+
+    {# Abwaerts-Uebergang zur naechsten Ebene #}
+    {%- set naechste = null -%}
+    {%- if tags and ("grafschaft" in tags) -%}
+      {%- set naechste = collections.gruppierung | default([]) | filterBy("data.grafschaft", slug) | sort(attribute="data.ordnung") | first -%}
+    {%- elif tags and ("gruppierung" in tags) -%}
+      {%- set naechste = collections.charakter | default([]) | filterBy("data.gruppierung", slug) | sort(attribute="data.ordnung") | first -%}
+    {%- endif -%}
+    {%- if naechste %}
+    <span class="topnav-sep topnav-sep--next" aria-hidden="true">→</span>
+    <a class="topnav-next" href="{{ naechste.url | url }}">{{ naechste.data.name }}</a>
     {%- endif %}
   </nav>
 
