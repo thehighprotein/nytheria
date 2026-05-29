@@ -97,6 +97,72 @@
     });
   }
 
+  /* ----------------------- Kapitel als Tabs ----------------------- */
+  // Wandelt die Kapitel-Navigation einer Charakterseite in Tabs um:
+  // Ein Klick zeigt nur das gewaehlte Kapitel. Ohne JS bleibt alles
+  // als normale Abfolge sichtbar (die Kapitel werden erst hier gebildet).
+  (function () {
+    var prose = document.querySelector(".page--charakter .prose--drop");
+    var nav = document.querySelector(".page--charakter .chapter-nav");
+    if (!prose || !nav) return;
+    var tabs = [].slice.call(nav.querySelectorAll("a"));
+    if (!tabs.length) return;
+
+    var nodes = [].slice.call(prose.childNodes);
+    var sections = {};
+    var order = [];
+    var current = null;
+    var lead = document.createElement("div");
+
+    nodes.forEach(function (node) {
+      if (node.nodeType === 1 && node.tagName === "H2" && node.id) {
+        current = document.createElement("section");
+        current.className = "chapter";
+        current.setAttribute("data-chapter", node.id);
+        sections[node.id] = current;
+        order.push(node.id);
+        current.appendChild(node);
+      } else if (current) {
+        current.appendChild(node);
+      } else {
+        lead.appendChild(node); // evtl. Text vor dem ersten Kapitel
+      }
+    });
+
+    if (!order.length) return; // keine H2-Kapitel -> unveraendert lassen
+
+    prose.innerHTML = "";
+    if (lead.childNodes.length) prose.appendChild(lead);
+    order.forEach(function (id) { prose.appendChild(sections[id]); });
+
+    function activate(id) {
+      order.forEach(function (cid) {
+        sections[cid].classList.toggle("is-active", cid === id);
+      });
+      tabs.forEach(function (t) {
+        var tid = (t.getAttribute("href") || "").replace(/^#/, "");
+        var on = tid === id;
+        t.classList.toggle("is-active", on);
+        if (on) { t.setAttribute("aria-current", "true"); }
+        else { t.removeAttribute("aria-current"); }
+      });
+      if (window.history && history.replaceState) {
+        history.replaceState(null, "", "#" + id);
+      }
+    }
+
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function (e) {
+        var tid = (t.getAttribute("href") || "").replace(/^#/, "");
+        if (sections[tid]) { e.preventDefault(); activate(tid); }
+      });
+    });
+
+    var initial = (location.hash || "").replace(/^#/, "");
+    if (!sections[initial]) initial = order[0];
+    activate(initial);
+  })();
+
   /* --------------------------- Scroll-Reveal ---------------------- */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {

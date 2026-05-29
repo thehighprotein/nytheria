@@ -358,6 +358,17 @@ img { display: block; max-width: 100%; }
   border-color: var(--accent);
   background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
+.chapter-nav a.is-active {
+  color: var(--ink);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Kapitel als Tabs — nur das aktive Kapitel sichtbar (per JS erzeugt). */
+.chapter { display: none; }
+.chapter.is-active { display: block; }
+/* Der Kapiteltitel kommt bereits aus dem aktiven Tab. */
+.chapter > h2 { display: none; }
 
 /* ------------------------------ Listen ----------------------------- */
 .listing {
