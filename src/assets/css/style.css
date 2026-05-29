@@ -223,7 +223,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-wappen {
   display: block;
-  width: clamp(150px, 22vw, 240px);
+  width: clamp(190px, 28vw, 320px);
   height: auto;
   margin: 0 auto 1.4rem;
   filter: drop-shadow(0 8px 26px rgba(0, 0, 0, 0.6));
