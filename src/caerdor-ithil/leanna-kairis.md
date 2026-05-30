@@ -8,6 +8,10 @@ beschreibung: Gräfin von Nytheria, Herrin des Sitzes Caerdor Ithil und Hüterin
 bild: /assets/img/leanna-kairis.png
 accent: "#c9a24a"
 musik: /assets/audio/leanna.mp3
+galerie:
+  - { src: /assets/img/galerie-01.png, text: Der See bei Morgengrauen }
+  - { src: /assets/img/galerie-02.png, text: Das Licht über Caerdor Ithil }
+  - { src: /assets/img/galerie-03.png, text: Leanna auf der Wacht }
 ---
 
 ## Prolog
