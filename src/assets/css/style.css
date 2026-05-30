@@ -218,7 +218,7 @@ img { display: block; max-width: 100%; }
 .hero-inner {
   position: relative;
   max-width: 680px;
-  margin: 0;
+  margin: 0 auto;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.75);
 }
 
@@ -248,17 +248,17 @@ img { display: block; max-width: 100%; }
   min-height: 0;
   display: block;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
-.stage .hero-wappen { margin: 0 0 1.4rem; }
-.stage .hero .rule { margin-left: 0; margin-right: auto; }
+.stage .hero-wappen { margin: 0 auto 1.4rem; }
+.stage .hero .rule { margin-left: auto; margin-right: auto; }
 
 /* Buttons (Kapitel-Tabs) linksbuendig unter dem Titel, im Glas-Panel. */
 .stage .chapter-nav {
   width: max-content;
   max-width: 100%;
-  margin: 1.5rem 0 0;
-  justify-content: flex-start;
+  margin: 1.5rem auto 0;
+  justify-content: center;
   background: rgba(10, 13, 18, 0.46);
   -webkit-backdrop-filter: blur(14px) saturate(115%);
   backdrop-filter: blur(14px) saturate(115%);
@@ -267,7 +267,7 @@ img { display: block; max-width: 100%; }
 }
 /* Texte linksbuendig im Glas-Panel. */
 .stage .prose {
-  margin: 1.5rem 0 0;
+  margin: 1.5rem auto 0;
   max-width: min(64ch, 100%);
   padding: clamp(1.7rem, 4vw, 2.8rem);
   background: rgba(10, 13, 18, 0.48);
