@@ -214,47 +214,63 @@ img { display: block; max-width: 100%; }
       rgba(10, 13, 18, 0.98) 100%);
 }
 
-/* Seitentitel direkt ueber dem Bild (KEIN Panel) — Schatten fuer Lesbarkeit. */
+/* Seitentitel: links oben im Bild, KEIN Panel — Schatten fuer Lesbarkeit. */
 .hero-inner {
   position: relative;
-  max-width: 760px;
+  max-width: 680px;
+  margin: 0;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.75);
 }
 
-/* Bild-Buehne (Variante A): Bild laeuft als Hintergrund bis kurz vor die
-   naechste Sektion; Titel und Texte liegen in Glas-Panels darueber. */
+/* Bild-Buehne (Variante A): Bild als Hintergrund bis kurz vor die naechste
+   Sektion. Titel links oben; Buttons und Texte linksbuendig darunter in
+   transparenten Glas-Panels. */
 .stage {
   position: relative;
+  min-height: 90vh;
+  padding: clamp(5rem, 11vh, 7.5rem) clamp(1.4rem, 5vw, 4rem) clamp(2.5rem, 7vh, 4.5rem);
   background-image: var(--hero-img);
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
 }
-/* Grafschaft mit Wappen: dunkler Verlauf statt Foto. */
+/* Grafschaft mit Wappen: dunkler Verlauf statt Foto (keine grosse Leerflaeche). */
 .stage--wappen {
+  min-height: auto;
   background:
     radial-gradient(70% 55% at 50% 30%,
       color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%),
     var(--bg);
 }
-.stage .hero { background: none; min-height: 84vh; }
-/* Wappen-Seite ohne Foto: moderater halten. */
-.stage--wappen .hero { min-height: 66vh; }
+/* Hero = nur der Titel, links oben (kein Flex-Zentrieren, keine Eigenhoehe). */
+.stage .hero {
+  background: none;
+  min-height: 0;
+  display: block;
+  padding: 0;
+  text-align: left;
+}
+.stage .hero-wappen { margin: 0 0 1.4rem; }
+.stage .hero .rule { margin-left: 0; margin-right: auto; }
+
+/* Buttons (Kapitel-Tabs) linksbuendig unter dem Titel, im Glas-Panel. */
 .stage .chapter-nav {
   width: max-content;
-  max-width: min(92%, var(--maxw));
-  margin: 1.3rem auto 0;
-  background: rgba(10, 13, 18, 0.5);
+  max-width: 100%;
+  margin: 1.5rem 0 0;
+  justify-content: flex-start;
+  background: rgba(10, 13, 18, 0.46);
   -webkit-backdrop-filter: blur(14px) saturate(115%);
   backdrop-filter: blur(14px) saturate(115%);
   border: 1px solid rgba(216, 210, 196, 0.16);
   border-radius: 12px;
 }
+/* Texte linksbuendig im Glas-Panel. */
 .stage .prose {
-  margin-top: 1.4rem;
-  margin-bottom: clamp(2.5rem, 7vh, 4.5rem);
+  margin: 1.5rem 0 0;
+  max-width: min(64ch, 100%);
   padding: clamp(1.7rem, 4vw, 2.8rem);
-  background: rgba(10, 13, 18, 0.52);
+  background: rgba(10, 13, 18, 0.48);
   -webkit-backdrop-filter: blur(14px) saturate(115%);
   backdrop-filter: blur(14px) saturate(115%);
   border: 1px solid rgba(216, 210, 196, 0.16);
