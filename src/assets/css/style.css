@@ -234,9 +234,11 @@ img { display: block; max-width: 100%; }
   background-position: center top;
   background-attachment: fixed;
 }
-/* Charakterseiten: Bild fuellt die Flaeche randlos (cover), aber mittig
-   ausgerichtet, damit die Figur moeglichst vollstaendig sichtbar bleibt. */
+/* Charakterseiten: Bild fuellt die Flaeche randlos (cover), mittig ausgerichtet.
+   Groessere Bildflaeche (min-height), damit mehr Bild zu sehen ist und die
+   "Augenblicke"-Sektion (dunkler Bereich) weiter nach unten rutscht. */
 .page--charakter .stage {
+  min-height: 135vh;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
