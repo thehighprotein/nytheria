@@ -7,19 +7,21 @@ layout: layouts/base.njk
     class="stage{% if wappen %} stage--wappen{% endif %}"
     {%- if not wappen %} style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"{% endif %}
   >
-    <section class="hero hero--wide">
-      <div class="hero-inner reveal">
-        {%- if wappen %}
-        <img class="hero-wappen" src="{{ wappen | url }}{{ wappen | v }}" alt="Wappen {{ name }}" />
-        {%- endif %}
-        <p class="kicker">Grafschaft</p>
-        <h1 class="hero-title">{{ name }}</h1>
-        {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
-        <div class="rule"><span>✦</span></div>
-      </div>
-    </section>
+    <div class="stage-inner">
+      <section class="hero hero--wide">
+        <div class="hero-inner reveal">
+          {%- if wappen %}
+          <img class="hero-wappen" src="{{ wappen | url }}{{ wappen | v }}" alt="Wappen {{ name }}" />
+          {%- endif %}
+          <p class="kicker">Grafschaft</p>
+          <h1 class="hero-title">{{ name }}</h1>
+          {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
+          <div class="rule"><span>✦</span></div>
+        </div>
+      </section>
 
-    <div class="prose reveal">{{ content | safe }}</div>
+      <div class="prose reveal">{{ content | safe }}</div>
+    </div>
   </div>
 
   <section class="listing">
