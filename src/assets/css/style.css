@@ -306,7 +306,8 @@ img { display: block; max-width: 100%; }
   font-size: 0.8rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #ecd08a;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.98), 0 0 4px rgba(0, 0, 0, 0.95), 0 1px 1px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 22px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title {
@@ -325,7 +326,8 @@ img { display: block; max-width: 100%; }
   margin: 1.2rem 0 0;
   font-style: italic;
   font-size: clamp(1.05rem, 2.4vw, 1.4rem);
-  color: var(--ink-soft);
+  color: #ecd08a;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.98), 0 0 4px rgba(0, 0, 0, 0.95), 0 1px 1px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 22px rgba(0, 0, 0, 0.5);
 }
 
 /* Zier-Trennlinie mit Glyphe */

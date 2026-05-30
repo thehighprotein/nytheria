@@ -3,10 +3,7 @@ layout: layouts/base.njk
 ---
 <article class="page page--grafschaft">
   {%- set heroBild = bild or '/assets/img/og-default.png' -%}
-  <div
-    class="stage{% if wappen %} stage--wappen{% endif %}"
-    {%- if not wappen %} style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"{% endif %}
-  >
+  <div class="stage" style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')">
     <div class="stage-inner">
       <section class="hero hero--wide">
         <div class="hero-inner reveal">
