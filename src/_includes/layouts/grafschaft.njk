@@ -17,6 +17,20 @@ layout: layouts/base.njk
         </div>
       </section>
 
+      {# --- Abschnitts-Tabs (wie die Kapitel bei Charakteren) --- #}
+      {%- set abschnitte = [
+          { id: "geschichte", titel: "Geschichte" },
+          { id: "orte", titel: "Orte" },
+          { id: "gruppierungen", titel: "Gruppierungen" },
+          { id: "gesetze", titel: "Gesetze" },
+          { id: "politik", titel: "Politik" }
+        ] -%}
+      <nav class="chapter-nav reveal" aria-label="Abschnitte">
+        {%- for k in abschnitte %}
+        <a href="#{{ k.id }}">{{ k.titel }}</a>
+        {%- endfor %}
+      </nav>
+
       <div class="prose reveal">{{ content | safe }}</div>
     </div>
   </div>

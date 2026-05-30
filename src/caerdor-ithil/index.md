@@ -9,12 +9,25 @@ beschreibung: Die Residenz der Grafschaft Nytheria und Hof der Gräfin Leanna Ka
 bild: /assets/img/banner-caerdor-ithil.png
 ---
 
+## Geschichte
+
 Caerdor Ithil — in der alten Zunge *das Silberlicht* — ist der Sitz der Grafschaft
-Nytheria. Auf einem Felssporn über dem See erhebt sich die Residenz, von der aus
-die Gräfin über das Land zwischen Hochland und Aschewald wacht.
+Nytheria. Auf einem Felssporn über dem See erhebt sich die Residenz. *Platzhalter:
+Geschichte des Sitzes.*
 
-Hier laufen die Fäden der Macht zusammen: Hof, Rat und Gefolge der Gräfin. Unten
-findest du die Personen, die in den Chroniken des Hofes verzeichnet sind.
+## Orte
 
-> *Platzhaltertext. Beschreibe hier Geschichte, Architektur und Bewohner des
-> gräflichen Sitzes.*
+*Platzhaltertext: Die Säle, Türme und Plätze von Caerdor Ithil.*
+
+## Gruppierungen
+
+Hier laufen die Fäden der Macht zusammen: Hof, Rat und Gefolge der Gräfin.
+*Platzhalter: Gruppen und Orden des Sitzes.*
+
+## Gesetze
+
+*Platzhaltertext: Hofordnung und Gesetze.*
+
+## Politik
+
+*Platzhaltertext: Bündnisse, Intrigen und Politik des Hofes.*

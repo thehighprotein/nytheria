@@ -102,8 +102,8 @@
   // Ein Klick zeigt nur das gewaehlte Kapitel. Ohne JS bleibt alles
   // als normale Abfolge sichtbar (die Kapitel werden erst hier gebildet).
   (function () {
-    var prose = document.querySelector(".page--charakter .prose--drop");
-    var nav = document.querySelector(".page--charakter .chapter-nav");
+    var prose = document.querySelector(".stage .prose");
+    var nav = document.querySelector(".stage .chapter-nav");
     if (!prose || !nav) return;
     var tabs = [].slice.call(nav.querySelectorAll("a"));
     if (!tabs.length) return;

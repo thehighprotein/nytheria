@@ -238,9 +238,9 @@ img { display: block; max-width: 100%; }
    Groessere Bildflaeche (min-height), damit mehr Bild zu sehen ist und die
    "Augenblicke"-Sektion (dunkler Bereich) weiter nach unten rutscht. */
 .page--charakter .stage {
-  min-height: 135vh;
+  min-height: 100vh;
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-attachment: fixed;
 }
 /* Linke Spalte: Block sitzt links oben in der Ecke, der Inhalt darin ist aber

@@ -9,9 +9,23 @@ beschreibung: Platzhalter — ein weiterer Ort der Grafschaft Nytheria.
 bild: /assets/img/seliaras-blick.png
 ---
 
-Seliaras Blick — ein Platzhalter für einen weiteren Ort der Grafschaft. Hier
-entsteht die Beschreibung dieses Schauplatzes: seine Lage, seine Geschichte und
-die Menschen, die ihn prägen.
+## Geschichte
 
-> *Platzhaltertext. Ersetze diesen Abschnitt durch deine eigene Lore — und lege
-> über die Daten-Datei `seliaras-blick.json` Akzentfarbe und Anzeigename fest.*
+Seliaras Blick — ein Platzhalter für einen weiteren Ort der Grafschaft.
+*Platzhaltertext: Geschichte dieses Schauplatzes.*
+
+## Orte
+
+*Platzhaltertext: Die markanten Stellen von Seliaras Blick.*
+
+## Gruppierungen
+
+*Platzhaltertext: Wer hält sich hier auf?*
+
+## Gesetze
+
+*Platzhaltertext: Regeln und Bräuche.*
+
+## Politik
+
+*Platzhaltertext: Politische Bedeutung des Ortes.*
