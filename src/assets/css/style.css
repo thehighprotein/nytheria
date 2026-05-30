@@ -186,7 +186,9 @@ img { display: block; max-width: 100%; }
   background-size: cover;
   background-position: center;
 }
-.hero--portrait { min-height: 78vh; background-position: center 22%; }
+/* Groessere Hero-Bilder: reichen bis kurz vor die naechste Sektion. */
+.hero--wide { min-height: 86vh; }
+.hero--portrait { min-height: 90vh; background-position: center 22%; }
 .hero--landing {
   min-height: 70vh;
   background:

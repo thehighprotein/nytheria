@@ -10,7 +10,7 @@ module.exports = {
   // Bei eigener Domain bzw. <user>.github.io-Repo: "" (leer).
   pathPrefix: "/nytheria",
 
-  name: "Liber Argenteus",
+  name: "Chroniken der Grafschaft Nytheria",
   tagline: "Chroniken der Grafschaft Nytheria",
   // Akzentfarbe als Fallback, falls eine Seite keine eigene definiert.
   accent: "#9aa7b8",
