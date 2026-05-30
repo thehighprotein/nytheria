@@ -234,11 +234,13 @@ img { display: block; max-width: 100%; }
   background-position: center top;
   background-attachment: fixed;
 }
-/* Charakterseiten: Portrait mitscrollen lassen, damit das ganze Bild (auch der
-   untere Teil) sichtbar wird statt fix auf den Viewport beschnitten zu sein. */
+/* Charakterseiten: ganzes Portrait zeigen (nicht formatfuellend zoomen/beschneiden).
+   contain passt das komplette Bild ein -> volle Figur sichtbar, nichts abgeschnitten. */
 .page--charakter .stage {
-  background-attachment: scroll;
-  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
 }
 /* Linke Spalte: Block sitzt links oben in der Ecke, der Inhalt darin ist aber
    mittig der Ueberschrift ausgerichtet (klebt nicht an der Bildkante). */
