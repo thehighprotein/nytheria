@@ -3,23 +3,24 @@ layout: layouts/base.njk
 ---
 <article class="page page--grafschaft">
   {%- set heroBild = bild or '/assets/img/og-default.png' -%}
-  <section
-    class="hero hero--wide{% if wappen %} hero--wappen{% endif %}"
+  <div
+    class="stage{% if wappen %} stage--wappen{% endif %}"
     {%- if not wappen %} style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"{% endif %}
   >
-    {%- if not wappen %}<div class="hero-veil"></div>{% endif %}
-    <div class="hero-inner reveal">
-      {%- if wappen %}
-      <img class="hero-wappen" src="{{ wappen | url }}{{ wappen | v }}" alt="Wappen {{ name }}" />
-      {%- endif %}
-      <p class="kicker">Grafschaft</p>
-      <h1 class="hero-title">{{ name }}</h1>
-      {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
-      <div class="rule"><span>✦</span></div>
-    </div>
-  </section>
+    <section class="hero hero--wide">
+      <div class="hero-inner reveal">
+        {%- if wappen %}
+        <img class="hero-wappen" src="{{ wappen | url }}{{ wappen | v }}" alt="Wappen {{ name }}" />
+        {%- endif %}
+        <p class="kicker">Grafschaft</p>
+        <h1 class="hero-title">{{ name }}</h1>
+        {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
+        <div class="rule"><span>✦</span></div>
+      </div>
+    </section>
 
-  <div class="prose reveal">{{ content | safe }}</div>
+    <div class="prose reveal">{{ content | safe }}</div>
+  </div>
 
   <section class="listing">
     <h2 class="section-title">Orte &amp; Gruppierungen</h2>

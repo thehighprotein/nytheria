@@ -214,7 +214,55 @@ img { display: block; max-width: 100%; }
       rgba(10, 13, 18, 0.98) 100%);
 }
 
-.hero-inner { position: relative; max-width: 760px; }
+/* Titel im Glas-Panel auf allen Hero-Bildern */
+.hero-inner {
+  position: relative;
+  max-width: 760px;
+  background: rgba(10, 13, 18, 0.42);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+  border: 1px solid rgba(216, 210, 196, 0.16);
+  border-radius: 14px;
+  padding: 1.7rem clamp(1.5rem, 4vw, 2.8rem) 2rem;
+}
+
+/* Bild-Buehne (Variante A): Bild laeuft als Hintergrund bis kurz vor die
+   naechste Sektion; Titel und Texte liegen in Glas-Panels darueber. */
+.stage {
+  position: relative;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+/* Grafschaft mit Wappen: dunkler Verlauf statt Foto. */
+.stage--wappen {
+  background:
+    radial-gradient(70% 55% at 50% 30%,
+      color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%),
+    var(--bg);
+}
+.stage .hero { background: none; min-height: 66vh; }
+.stage .chapter-nav {
+  width: max-content;
+  max-width: min(92%, var(--maxw));
+  margin: 1.3rem auto 0;
+  background: rgba(10, 13, 18, 0.5);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+  border: 1px solid rgba(216, 210, 196, 0.16);
+  border-radius: 12px;
+}
+.stage .prose {
+  margin-top: 1.4rem;
+  margin-bottom: clamp(2.5rem, 7vh, 4.5rem);
+  padding: clamp(1.7rem, 4vw, 2.8rem);
+  background: rgba(10, 13, 18, 0.52);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+  border: 1px solid rgba(216, 210, 196, 0.16);
+  border-radius: 14px;
+}
 
 /* Grafschaft-Banner als Wappen-Emblem (statt formatfuellendem Foto) */
 .hero--wappen {

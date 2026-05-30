@@ -24,16 +24,16 @@
     </details>
     {%- endif %}
 
-    {# Abwaerts-Uebergang zur naechsten Ebene — Button-Optik #}
-    {%- set naechste = null -%}
+    {# Abwaerts-Uebergang: Buttons fuer ALLE Unterseiten der aktuellen Ebene #}
+    {%- set kinder = [] -%}
     {%- if tags and ("grafschaft" in tags) -%}
-      {%- set naechste = collections.gruppierung | default([]) | filterBy("data.grafschaft", slug) | sort(attribute="data.ordnung") | first -%}
+      {%- set kinder = collections.gruppierung | default([]) | filterBy("data.grafschaft", slug) | sort(attribute="data.ordnung") -%}
     {%- elif tags and ("gruppierung" in tags) -%}
-      {%- set naechste = collections.charakter | default([]) | filterBy("data.gruppierung", slug) | sort(attribute="data.ordnung") | first -%}
+      {%- set kinder = collections.charakter | default([]) | filterBy("data.gruppierung", slug) | sort(attribute="data.ordnung") -%}
     {%- endif -%}
-    {%- if naechste %}
-    <a class="iconbtn" href="{{ naechste.url | url }}">{{ naechste.data.name }}</a>
-    {%- endif %}
+    {%- for kind in kinder %}
+    <a class="iconbtn" href="{{ kind.url | url }}">{{ kind.data.name }}</a>
+    {%- endfor %}
   </nav>
 
   <div class="topbar-actions">

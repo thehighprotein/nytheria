@@ -3,33 +3,32 @@ layout: layouts/base.njk
 ---
 <article class="page page--charakter">
   {%- set heroBild = bild or '/assets/img/og-default.png' -%}
-  <section
-    class="hero hero--portrait"
-    style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')"
-  >
-    <div class="hero-veil hero-veil--portrait"></div>
-    <div class="hero-inner reveal">
-      <p class="kicker">{{ gruppierungName }}</p>
-      <h1 class="hero-title">{{ name }}</h1>
-      {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
-      <div class="rule"><span>✦</span></div>
-    </div>
-  </section>
+  {# Bild als durchgehender Hintergrund hinter Titel, Tabs und Text. #}
+  <div class="stage" style="--hero-img: url('{{ heroBild | url }}{{ heroBild | v }}')">
+    <section class="hero hero--portrait">
+      <div class="hero-inner reveal">
+        <p class="kicker">{{ gruppierungName }}</p>
+        <h1 class="hero-title">{{ name }}</h1>
+        {%- if untertitel %}<p class="hero-sub">{{ untertitel }}</p>{%- endif %}
+        <div class="rule"><span>✦</span></div>
+      </div>
+    </section>
 
-  {# --- Kapitel-Navigation (Anker-Links wie #prolog) --- #}
-  {%- set kapitel = kapitel or [
-      { id: "prolog", titel: "Prolog" },
-      { id: "herkunft", titel: "Herkunft" },
-      { id: "wesen", titel: "Wesen" },
-      { id: "verbindungen", titel: "Verbindungen" }
-    ] -%}
-  <nav class="chapter-nav reveal" aria-label="Kapitel">
-    {%- for k in kapitel %}
-    <a href="#{{ k.id }}">{{ k.titel }}</a>
-    {%- endfor %}
-  </nav>
+    {# --- Kapitel-Navigation (Anker-Links wie #prolog) --- #}
+    {%- set kapitel = kapitel or [
+        { id: "prolog", titel: "Prolog" },
+        { id: "herkunft", titel: "Herkunft" },
+        { id: "wesen", titel: "Wesen" },
+        { id: "verbindungen", titel: "Verbindungen" }
+      ] -%}
+    <nav class="chapter-nav reveal" aria-label="Kapitel">
+      {%- for k in kapitel %}
+      <a href="#{{ k.id }}">{{ k.titel }}</a>
+      {%- endfor %}
+    </nav>
 
-  <div class="prose prose--drop reveal">{{ content | safe }}</div>
+    <div class="prose prose--drop reveal">{{ content | safe }}</div>
+  </div>
 
   {%- if galerie %}
   <section class="listing reveal">
