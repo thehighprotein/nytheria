@@ -234,12 +234,11 @@ img { display: block; max-width: 100%; }
   background-position: center top;
   background-attachment: fixed;
 }
-/* Charakterseiten: ganzes Portrait zeigen (nicht formatfuellend zoomen/beschneiden).
-   contain passt das komplette Bild ein -> volle Figur sichtbar, nichts abgeschnitten. */
+/* Charakterseiten: Bild fuellt die Flaeche randlos (cover), aber mittig
+   ausgerichtet, damit die Figur moeglichst vollstaendig sichtbar bleibt. */
 .page--charakter .stage {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center top;
+  background-size: cover;
+  background-position: center center;
   background-attachment: fixed;
 }
 /* Linke Spalte: Block sitzt links oben in der Ecke, der Inhalt darin ist aber
